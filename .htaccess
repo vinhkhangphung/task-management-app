@@ -1,0 +1,13 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# task & task/
+RewriteRule ^([^/]+)/?$ http://localhost/internship-vietlink-be/mvc-oop/khang/todo-app/index.php?controller=$1 [R=302,L]
+
+# task/page
+RewriteRule ^([^/]+)/([^/]+)$ http://localhost/internship-vietlink-be/mvc-oop/khang/todo-app/index.php?controller=$1&action=$2 [R=307,L]
+
+# task/page/id
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)$ http://localhost/internship-vietlink-be/mvc-oop/khang/todo-app/index.php?controller=$1&action=$2&id=$3 [R=307,L]
